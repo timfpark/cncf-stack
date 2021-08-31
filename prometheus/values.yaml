@@ -1,9 +1,0 @@
-adminUser: "ops"
-alertmanager:
-    persistentVolume:
-        storageClass: "default"
-server:
-    global:
-        scrape_interval: 10s
-    persistentVolume:
-        storageClass": "default"
