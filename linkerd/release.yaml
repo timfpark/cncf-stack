@@ -13,7 +13,7 @@ spec:
                 kind: HelmRepository
                 name: linkerd
                 namespace: flux-system
-            version: "2.10.2"
+            version: "2.9.4"
     timeout: 30m0s
     install:
         remediation:
