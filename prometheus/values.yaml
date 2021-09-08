@@ -1,12 +1,13 @@
 adminUser: ops
 alertmanager:
     persistentVolume:
-        storageClass: default
+        mountPath: /prometheus
+        storageClass: local-path 
 server:
     global:
         scrape_interval: 10s
     persistentVolume:
-        storageClass: default
+        storageClass: local-path 
         mountPath: /prometheus
 nodeExporter:
     hostRootfs: false
