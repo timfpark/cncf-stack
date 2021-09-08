@@ -7,3 +7,5 @@ server:
         scrape_interval: 10s
     persistentVolume:
         storageClass": default
+nodeExporter:
+    hostRootfs: false
