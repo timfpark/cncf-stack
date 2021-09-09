@@ -8,3 +8,4 @@ resources:
     - kured
     - linkerd
     - prometheus
+    - vault
