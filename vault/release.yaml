@@ -20,7 +20,7 @@ spec:
     values:
         global:
             enabled: true
-            tlsDisable: false
+            tlsDisable: true
 
         ui:
             enabled: true
