@@ -4,6 +4,7 @@ namespace: prometheus
 resources:
     - namespace.yaml
     - release.yaml
+    - source.yaml
 configMapGenerator:
     - name: prometheus-values
       files:
