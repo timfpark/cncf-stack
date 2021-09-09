@@ -4,4 +4,3 @@ namespace: vault
 resources:
     - namespace.yaml
     - release.yaml
-    - source.yaml
