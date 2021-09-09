@@ -53,13 +53,4 @@ spec:
                 limits:
                     memory: 16Gi
                     cpu: 2000m
-
-            # For HA configuration and because we need to manually init the vault,
-            # we need to define custom readiness/liveness Probe settings
-            readinessProbe:
-                enabled: true
-                path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
-            livenessProbe:
-                enabled: true
-                path: "/v1/sys/health?standbyok=true"
-                initialDelaySeconds: 60
+# see https://learn.hashicorp.com/tutorials/vault/getting-started-deploy#initializing-the-vault
