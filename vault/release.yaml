@@ -59,10 +59,7 @@ spec:
 
             ha:
                 enabled: true
-                replicas: 5
-                raft:
-                    enabled: true
-                    setNodeId: true
+                replicas: 3
 
                 config: |
                     ui = true
