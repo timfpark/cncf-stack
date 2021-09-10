@@ -21,11 +21,10 @@ spec:
         global:
             enabled: true
 
+        # This deploys the UI and surfaces it as an internal service.
+        # See out-of-band Contour ingress definition for external access.
         ui:
             enabled: true
-            serviceType: "LoadBalancer"
-            serviceNodePort: null
-            externalPort: 8200
 
         server:
             # This configures the Vault Statefulset to create a PVC for audit logs.
