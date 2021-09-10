@@ -69,7 +69,7 @@ spec:
                     }
 
                     storage "postgresql" {
-                        connection_url = "postgres://ops@vault-postgresql:euro4SURE@vault-postgresql.postgres.database.azure.com:5432/vault?sslmode=disable"
+                        connection_url = "postgres://ops@vault-postgresql:euro4SURE@vault-postgresql.postgres.database.azure.com:5432/vault?sslmode=verify-full"
                     }
 
 # see https://learn.hashicorp.com/tutorials/vault/getting-started-deploy#initializing-the-vault
