@@ -20,7 +20,6 @@ spec:
     values:
         global:
             enabled: true
-            tlsDisable: false
 
         ui:
             enabled: true
@@ -58,7 +57,7 @@ spec:
             # we need to define custom readiness/liveness Probe settings
             readinessProbe:
                 enabled: true
-                path: "/v1/sys/health?standbyok=true"
+                path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
             livenessProbe:
                 enabled: false
                 path: "/v1/sys/health?standbyok=true"
