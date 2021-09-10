@@ -4,5 +4,4 @@ namespace: vault
 resources:
     - namespace.yaml
     - release.yaml
-    - vault-http-proxy.yaml
     - vault-ui-http-proxy.yaml
