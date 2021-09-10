@@ -53,7 +53,7 @@ spec:
                 path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
                 initialDelaySeconds: 60
 
-            # Turn on High Availability, use 5 replicas, and externalize storage in PostgreSQL.
+            # Turn on High Availability, use 3 replicas, and externalize storage in PostgreSQL.
             standalone:
                 enabled: false
 
@@ -71,6 +71,7 @@ spec:
                     }
 
                     storage "postgresql" {
+                        ha_enabled = "true"
                         connection_url = "postgres://ops@vault-postgresql:euro4SURE@vault-postgresql.postgres.database.azure.com:5432/vault?sslmode=verify-full"
                     }
 
