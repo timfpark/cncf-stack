@@ -32,17 +32,6 @@ spec:
             auditStorage:
                 enabled: true
 
-            # Turn on High Availability, use 5 replicas, and Raft for consensus across them.
-            standalone:
-                enabled: false
-
-            ha:
-                enabled: true
-                replicas: 5
-                raft:
-                    enabled: true
-                    setNodeId: true
-
             # These Resource Limits the recommended node requirements in the
             # Vault Reference Architecture for a Small Cluster
             resources:
@@ -62,4 +51,54 @@ spec:
                 enabled: true
                 path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
                 initialDelaySeconds: 60
+
+            # Turn on High Availability, use 5 replicas, and Raft for consensus across them.
+            standalone:
+                enabled: false
+
+            ha:
+                enabled: true
+                replicas: 5
+                raft:
+                    enabled: true
+                    setNodeId: true
+
+                    config: |
+                        ui = true
+                        listener "tcp" {
+                            address = "[::]:8200"
+                            cluster_address = "[::]:8201"
+                        }
+
+                        storage "raft" {
+                            path = "/vault/data"
+                            retry_join {
+                                leader_api_addr = "https://vault-0.vault-internal:8200"
+                            }
+                            retry_join {
+                                leader_api_addr = "https://vault-1.vault-internal:8200"
+                            }
+                            retry_join {
+                                leader_api_addr = "https://vault-2.vault-internal:8200"
+                            }
+                            retry_join {
+                                leader_api_addr = "https://vault-3.vault-internal:8200"
+                            }
+                            retry_join {
+                                leader_api_addr = "https://vault-4.vault-internal:8200"
+                            }
+
+                            autopilot {
+                                cleanup_dead_servers = "true"
+                                last_contact_threshold = "200ms"
+                                last_contact_failure_threshold = "10m"
+                                max_trailing_logs = 250000
+                                min_quorum = 5
+                                server_stabilization_time = "10s"
+                            }
+
+                        }
+
+                        service_registration "kubernetes" {}
+
 # see https://learn.hashicorp.com/tutorials/vault/getting-started-deploy#initializing-the-vault
