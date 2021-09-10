@@ -25,6 +25,7 @@ spec:
         # See out-of-band Contour ingress definition for external access.
         ui:
             enabled: true
+            activeVaultPodOnly: true
 
         server:
             # This configures the Vault Statefulset to create a PVC for audit logs.
