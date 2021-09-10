@@ -68,6 +68,9 @@ spec:
                         listener "tcp" {
                             address = "[::]:8200"
                             cluster_address = "[::]:8201"
+                            tls_cert_file = "/vault/userconfig/tls-server/server.crt"
+                            tls_key_file = "/vault/userconfig/tls-server/server.key"
+                            tls_ca_cert_file = "/vault/userconfig/tls-ca/ca.crt"
                         }
 
                         storage "raft" {
