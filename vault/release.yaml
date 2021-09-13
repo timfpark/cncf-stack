@@ -75,11 +75,3 @@ spec:
                     }
 
 # see https://learn.hashicorp.com/tutorials/vault/getting-started-deploy#initializing-the-vault
-
-Unseal Key 1: qRVPpceARfg5nQ4qAr9PCj9xId66HGznimQYMGZbU7mV
-Unseal Key 2: GesCxFAyjjoTbBePjgAsKaSeCHTniUsxfDJm1Kmg8eD6
-Unseal Key 3: OJiN7i3OIuSi0eceZs7aIfI6jKgEubb1q17+8QSnm1EZ
-Unseal Key 4: 1JfVqqlCayipFfl1XtzmqXDMP5SUcl8M3wYiXxS+d3EF
-Unseal Key 5: ltD/Vhk3Qog16wJLF2fzBi0C0SRj9KMV3dH16YMiail0
-
-Initial Root Token: s.LRhFyPWUmrBKoAAfeaDsI8tT
