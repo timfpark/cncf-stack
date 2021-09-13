@@ -22,7 +22,6 @@ spec:
             enabled: true
 
         # This deploys the UI and surfaces it as an internal service.
-        # See out-of-band Contour ingress definition for external access.
         ui:
             enabled: true
 
